@@ -59,23 +59,22 @@
     </footer>
   </div>
 
-  <script>
-    // ----- EDIT THESE VALUES to match your GitHub repo -----
-    const GITHUB_USER = "FaizaNida";        // change if different
-    const REPO_NAME_DYN = "Dynamic-Workshop"; // repo where Dynamic notebook lives
-    const REPO_NAME_PID = "Dynamic-PID";     // repo where PID notebook lives (or same repo)
-    const BRANCH = "main";                   // branch name (usually "main")
-    // ------------------------------------------------------
+ <script>
+  // ----- Your actual GitHub details -----
+  const GITHUB_USER = "fayzeh-elzghier";       // ✅ اسم حسابك
+  const REPO_NAME = "Dynamic-Workshop";        // ✅ نفس الريبو
+  const BRANCH = "main";                       // أو "master" إذا هذا اسم الفرع
+  // --------------------------------------
 
-    function binderURL(user, repo, branch, filepath){
-      const base = `https://mybinder.org/v2/gh/${user}/${repo}/${branch}`;
-      if(!filepath) return base;
-      return base + `?urlpath=lab/tree/${encodeURIComponent(filepath)}`;
-    }
+  function binderURL(user, repo, branch, filepath){
+    const base = `https://mybinder.org/v2/gh/${user}/${repo}/${branch}`;
+    return base + `?urlpath=lab/tree/${encodeURIComponent(filepath)}`;
+  }
 
-    document.getElementById("link-dyn").href = binderURL(GITHUB_USER, REPO_NAME_DYN, BRANCH, "Dynamic_Systems.ipynb");
-    document.getElementById("link-pid").href = binderURL(GITHUB_USER, REPO_NAME_PID, BRANCH, "PID_Simulation.ipynb");
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  // Two notebooks in the same repo:
+  document.getElementById("link-dyn").href = binderURL(GITHUB_USER, REPO_NAME, BRANCH, "Dynamic_Systems.ipynb");
+  document.getElementById("link-pid").href = binderURL(GITHUB_USER, REPO_NAME, BRANCH, "PID_Simulation.ipynb");
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
