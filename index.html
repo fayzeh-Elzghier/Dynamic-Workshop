@@ -6,7 +6,6 @@
   <title>Dynamic Systems & PID Workshop</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
     :root{
       --primary:#4f46e5;
       --primary-dark:#3730a3;
@@ -14,7 +13,6 @@
       --muted:#4b5563;
       --btn-hover:rgba(79,70,229,0.8);
     }
-
     body{
       font-family:'Inter',sans-serif;
       margin:0;
@@ -23,32 +21,30 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      background: linear-gradient(120deg, #eef2ff, #dbeafe, #e0f2fe);
+      background: linear-gradient(135deg, #1e293b, #3b4252, #1e293b);
       background-size: 400% 400%;
-      animation: gradientMove 15s ease infinite;
-      color:#111;
+      animation: gradientMove 20s ease infinite;
+      color:#f8fafc;
     }
-
     @keyframes gradientMove {
       0%{background-position:0% 50%;}
       50%{background-position:100% 50%;}
       100%{background-position:0% 50%;}
     }
-
     .container{
       width:90%;
       max-width:820px;
-      background:var(--card);
+      background:rgba(255,255,255,0.95);
       border-radius:14px;
-      box-shadow:0 14px 28px rgba(15,23,42,0.15);
+      box-shadow:0 14px 28px rgba(0,0,0,0.25);
       padding:32px;
       transition: transform 0.3s, box-shadow 0.3s;
+      color:#111;
     }
     .container:hover{
       transform: translateY(-6px);
-      box-shadow:0 20px 40px rgba(15,23,42,0.2);
+      box-shadow:0 20px 40px rgba(0,0,0,0.35);
     }
-
     header{
       display:flex;
       gap:16px;
@@ -67,14 +63,13 @@
       height:84px;
       object-fit:contain;
       border-radius:10px;
-      box-shadow:0 4px 14px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
+      box-shadow:0 4px 14px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    /* Hover animation for logos */
     header img:hover{
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.12) rotate(5deg);
+      box-shadow:0 12px 28px rgba(0,0,0,0.25);
     }
-
     h1{
       margin:0;
       font-size:26px;
@@ -83,22 +78,25 @@
     p.subtitle{
       margin:4px 0 12px;
       font-size:16px;
-      color:var(--primary-dark);
+      color:#4f46e5;
       font-weight:500;
+    }
+    p.description{
+      margin:0 0 10px;
+      font-size:15px;
+      color:#6b7280;
     }
     p.lead{
       margin:0 0 10px;
       font-size:15px;
-      color:var(--muted);
+      color:#374151;
     }
-
     .buttons{
       display:flex;
       gap:14px;
       flex-wrap:wrap;
       margin-top:20px;
     }
-
     .btn{
       display:inline-flex;
       align-items:center;
@@ -109,12 +107,12 @@
       text-decoration:none;
       border-radius:12px;
       box-shadow:0 8px 22px rgba(79,70,229,0.18);
-      transition: all 0.3s ease;
+      transition: all 0.3s ease, transform 0.3s, box-shadow 0.3s;
     }
     .btn:hover{
-      transform: translateY(-3px);
+      transform: translateY(-4px) scale(1.03);
       background:var(--btn-hover);
-      box-shadow:0 12px 28px rgba(79,70,229,0.25);
+      box-shadow:0 14px 30px rgba(79,70,229,0.3);
     }
     .btn.secondary{
       background:#fff;
@@ -125,21 +123,20 @@
       background:var(--primary);
       color:#fff;
       border:none;
+      transform: translateY(-4px) scale(1.03);
+      box-shadow:0 14px 30px rgba(79,70,229,0.3);
     }
-
     .note{
       margin-top:18px;
-      color:var(--muted);
+      color:#6b7280;
       font-size:14px;
     }
-
     footer{
       margin-top:28px;
-      color:var(--muted);
+      color:#6b7280;
       font-size:13px;
       text-align:center;
     }
-
     @media (max-width:520px){
       header{flex-direction:column; align-items:center;}
       header img{width:72px; height:72px;}
@@ -151,13 +148,14 @@
   <div class="container">
     <header>
       <div class="logos">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/University_of_Palestine_logo.png" alt="University Logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/IEEE_Logo.png" alt="IEEE Logo">
+        <!-- Logo link updated -->
+        <img src="https://static.cdnlogo.com/logos/b/84/birzeit-university.svg" alt="Birzeit University Logo">
       </div>
       <div>
         <h1>Dynamic Systems &amp; PID Control Workshop</h1>
-        <p class="subtitle">Hands-on simulations & real-time PID explorations for ECE students</p>
-        <p class="lead"><strong>Presented by:</strong> Dr. Wasel Ghanem &amp; Faiza Nida — Dept. of Electrical &amp; Computer Engineering</p>
+        <p class="subtitle">Empowering ECE students with real‑time simulations &amp; PID experiments</p>
+        <p class="description">Join this hands‑on workshop to explore dynamic systems and PID controllers using interactive notebooks.</p>
+        <p class="lead"><strong>Presented by:</strong> Fayzeh Elzghier &amp; Dr. Wasel Ghanem — Dept. of Electrical &amp; Computer Engineering</p>
       </div>
     </header>
 
@@ -173,13 +171,13 @@
     </section>
 
     <footer>
-      © <span id="year"></span> Dynamic Systems Workshop — University
+      © <span id="year"></span> Dynamic Systems Workshop — Birzeit University
     </footer>
   </div>
 
   <script>
     const GITHUB_USER = "fayzeh-elzghier";
-    const REPO_NAME = "Dynamic-Workshop";
+    const REPO_NAME = "Dynamic‑Workshop";
     const BRANCH = "main";
 
     function binderURL(user, repo, branch, filepath){
