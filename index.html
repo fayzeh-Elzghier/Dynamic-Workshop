@@ -356,11 +356,11 @@
     <section>
       <h3><i class="fas fa-rocket"></i> Explore the Interactive Notebooks</h3>
       <div class="buttons">
-        <a id="link-dyn" class="btn" href="#" target="_blank">
+        <a id="link-dyn" class="btn" href="https://mybinder.org/v2/gh/fayzeh-elzghier/Dynamic-Workshop/main?urlpath=lab/tree/Dynamic_Systems.ipynb" target="_blank">
           <i class="fas fa-sliders-h"></i>
           <span>Open Dynamic Systems Notebook</span>
         </a>
-        <a id="link-pid" class="btn secondary" href="#" target="_blank">
+        <a id="link-pid" class="btn secondary" href="https://mybinder.org/v2/gh/fayzeh-elzghier/Dynamic-Workshop/main?urlpath=lab/tree/PID_Simulation.ipynb" target="_blank">
           <i class="fas fa-cogs"></i>
           <span>Open PID Controller Notebook</span>
         </a>
@@ -400,17 +400,11 @@
   </div>
 
   <script>
-    const GITHUB_USER = "fayzeh-elzghier";
-    const REPO_NAME = "Dynamic-Workshop";
-    const BRANCH = "main";
-
-    function binderURL(user, repo, branch, filepath){
-      return `https://mybinder.org/v2/gh/${user}/${repo}/${branch}?urlpath=lab/tree/${encodeURIComponent(filepath)}`;
-    }
-
-    document.getElementById("link-dyn").href = binderURL(GITHUB_USER, REPO_NAME, BRANCH, "Dynamic_Systems.ipynb");
-    document.getElementById("link-pid").href = binderURL(GITHUB_USER, REPO_NAME, BRANCH, "PID_Simulation.ipynb");
+    // Set the current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Optional: You can still use JavaScript to set the links if needed
+    // But I've hardcoded them in the HTML for reliability
   </script>
 </body>
 </html>
